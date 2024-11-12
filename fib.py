@@ -1,4 +1,5 @@
 import argparse
+from functools import cache
 
 
 def fibonacci_iterative(n: int) -> int:
@@ -21,27 +22,18 @@ def fibonacci_iterative(n: int) -> int:
     return suma
 
 
-cache = {}
-
-
+@cache
 def fibonacci_recursive(n: int) -> int:
     """
-    Compute the n-th Fibonacci number with recursive method.
+    Compute the i-th Fibonacci number with recursive method.
     :param n: i-th Fibonacci number.
-    :return: the n-th Fibonacci number.
+    :return: the i-th Fibonacci number.
     """
     if n < 0:
         raise ValueError("n must be greater or equal to zero.")
     if n < 2:
         return n
-    if n in cache:
-        return cache[n]
-
-    nth = fibonacci_iterative(n - 1) + fibonacci_iterative(n - 2)
-
-    cache[n] = nth
-
-    return nth
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
 
 if __name__ == "__main__":
