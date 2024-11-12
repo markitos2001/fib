@@ -1,4 +1,5 @@
 import pytest
+
 from fib import fibonacci_iterative, fibonacci_recursive;
 
 from fib import fibonacci_iterative
@@ -11,4 +12,4 @@ def test_fib_negative_raise_error():
         fibonacci_iterative(-1)
 
 def test_fib_9_is_34_recursive():
-    assert fibonacci_recursive(39) == 5702887
+    assert fibonacci_recursive(34) == 5702887
