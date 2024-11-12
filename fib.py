@@ -25,9 +25,9 @@ def fibonacci_iterative(n: int) -> int:
 @cache
 def fibonacci_recursive(n: int) -> int:
     """
-    Compute the n-th Fibonacci number with recursive method.
+    Compute the i-th Fibonacci number with recursive method.
     :param n: i-th Fibonacci number.
-    :return: the n-th Fibonacci number.
+    :return: the i-th Fibonacci number.
     """
     if n < 0:
         raise ValueError("n must be greater or equal to zero.")
